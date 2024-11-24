@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def main():
-    initial_state = State(query="")
+    initial_state = State(query="来客時の対応手順を教えてください")
     result = compiled.invoke(initial_state)
     return str(result["messages"][-1])
 

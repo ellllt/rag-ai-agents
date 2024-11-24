@@ -12,3 +12,4 @@ services:
       - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
       - LANGCHAIN_API_KEY=
       - LANGCHAIN_PROJECT=
+      - CORS_ALLOWED_ORIGINS=""

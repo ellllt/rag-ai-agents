@@ -1,10 +1,13 @@
+import os
 from flask import Flask, Response, request, jsonify
 from flask_cors import CORS
 from state import State
 from graph import compiled
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+
+cors_allowed_origins = os.getenv("CORS_ALLOWED_ORIGINS", "").split(',')
+CORS(app, origins=cors_allowed_origins)
 
 @app.route('/api/stream', methods=['POST'])
 def stream():

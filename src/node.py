@@ -1,7 +1,7 @@
 from typing import Any
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from constants import ROLES
 from state import State
 from chat_model import llm
@@ -32,7 +32,7 @@ def answering_node(state: State) -> dict[str, Any]:
     query = state.query
     role = state.current_role
     role_details = "\n".join([f"- {v['name']}: {v['details']}" for v in ROLES.values()])
-    context = retriever.get_relevant_documents(query)
+    context = retriever.invoke(query)
 
     prompt = ChatPromptTemplate.from_template(
         """

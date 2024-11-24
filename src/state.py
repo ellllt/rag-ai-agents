@@ -1,7 +1,6 @@
 import operator
 from typing import Annotated
-
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 
 class State(BaseModel):
     query: str = Field(

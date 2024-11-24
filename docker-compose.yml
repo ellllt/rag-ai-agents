@@ -1,0 +1,14 @@
+services:
+  python-app:
+    build: .
+    volumes:
+      - ./src:/app
+    ports:
+      - "8080:5000"
+    environment:
+      - FLASK_ENV=development
+      - OPENAI_API_KEY=
+      - LANGCHAIN_TRACING_V2=true
+      - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+      - LANGCHAIN_API_KEY=
+      - LANGCHAIN_PROJECT=

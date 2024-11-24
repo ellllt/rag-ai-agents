@@ -1,0 +1,7 @@
+flask
+langchain-core
+langchain-openai
+langchain-community
+langchain-chroma
+langgraph
+

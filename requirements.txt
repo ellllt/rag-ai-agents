@@ -1,8 +1,10 @@
 flask
+flask-cors
 langchain-core
 langchain-openai
 langchain-community
 langchain-chroma
 langgraph
 unstructured[all-docs]
+gunicorn
 

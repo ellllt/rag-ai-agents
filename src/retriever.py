@@ -6,5 +6,5 @@ loader = DirectoryLoader('./internal_docs', glob="**/*.md")
 docs = loader.load()
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 db = Chroma.from_documents(docs, embeddings)
-retriever = db.as_retriever(search_kwargs={"k": 1})
+retriever = db.as_retriever(search_kwargs={"k": 3})
 
